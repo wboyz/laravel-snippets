@@ -16,9 +16,13 @@ Or Settings/Preferences ➔ Install ➔ Search for `laravel-5-snippets`. You sho
 * **l:ho**: HasOne method.
 * **l:fillable**: Fillable model property.
 * **l:guarded**: Guarded model property.
+* **l:hidden**: Hidden model property.
+* **l:visible**: Visible model property.
 * **l:dates**: Dates model property.
+* **l:appends**: Appends model property.
 * **l:casts**: Casts model property.
 * **l:scope**: Scope method.
+* **l:accessor**: Accessor method.
 * **l:controller**: Controller method.
 ***
 

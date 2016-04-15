@@ -71,6 +71,26 @@
              */
             protected $guarded = ['${1:properties}'];
         """
+    'Hidden':
+        'prefix': 'l:hidden'
+        'body': """
+            /**
+             * The attributes that should be hidden for arrays.
+             *
+             * @var array
+             */
+            protected $hidden = ['${1:properties}'];
+        """
+    'Visible':
+        'prefix': 'l:visible'
+        'body': """
+            /**
+             * The attributes that should be visible in arrays.
+             *
+             * @var array
+             */
+            protected $visible = ['${1:properties}'];
+        """
     'Dates':
         'prefix': 'l:dates'
         'body': """
