@@ -1,0 +1,122 @@
+'.source.php':
+    'HasMany':
+        'prefix': 'l:hm'
+        'body': """
+            /**
+             * Get the ${1:models} for the ${2:model}.
+             *
+             * @return \\\\Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasMany
+             */
+            public function ${1:models}()
+            {
+                return $this->hasMany(${3:Name}::class${4:, 'foreign_key', 'local_key'});
+            }
+        """
+    'BelongsTo':
+        'prefix': 'l:bt'
+        'body': """
+            /**
+             * Get the ${1:model} that owns the ${2:model}.
+             *
+             * @return \\\\Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsTo
+             */
+            public function ${1:model}()
+            {
+                return $this->belongsTo(${3:Name}::class${4:, 'foreign_key', 'local_key'});
+            }
+        """
+    'BelongsToMany':
+        'prefix': 'l:btm'
+        'body': """
+            /**
+             * The ${1:models} that belong to the ${2:model}.
+             *
+             * @return \\\\Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\BelongsToMany
+             */
+            public function ${1:models}()
+            {
+                return $this->belongsToMany(${3:Name}::class${4:, 'table_name', 'foreign_key', 'local_key'});
+            }
+        """
+    'HasOne':
+        'prefix': 'l:ho'
+        'body': """
+            /**
+             * Get the ${1:model} record associated with the ${2:model}.
+             *
+             * @return \\\\Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\HasOne
+             */
+            public function ${1:model}()
+            {
+                return $this->hasOne(${3:Name}::class${4:, 'foreign_key', 'local_key'});
+            }
+        """
+    'Fillable':
+        'prefix': 'l:fillable'
+        'body': """
+            /**
+             * The attributes that are mass assignable.
+             *
+             * @var array
+             */
+            protected $fillable = [${1:properties}];
+        """
+    'Guarded':
+        'prefix': 'l:guarded'
+        'body': """
+            /**
+             * The attributes that aren't mass assignable.
+             *
+             * @var array
+             */
+            protected $guarded = [${1:properties}];
+        """
+    'Dates':
+        'prefix': 'l:dates'
+        'body': """
+            /**
+             * The attributes that should be mutated to dates.
+             *
+             * @var array
+             */
+            protected $dates = [${1:properties}];
+        """
+    'Casts':
+        'prefix': 'l:casts'
+        'body': """
+            /**
+             * The attributes that should be casted to native types.
+             *
+             * @var array
+             */
+            protected $casts = [
+                '${1:property_name}' => '${2:type}',
+            ];
+        """
+    'Scope':
+        'prefix': 'l:scope'
+        'body': """
+            /**
+             * Scope a query to only include ${2:description}.
+             *
+             * @return \\\\Illuminate\\\\Database\\\\Eloquent\\\\Builder
+             */
+            public function scope${1:Name}($query)
+            {
+                return $query->${3:where('example', 1)};
+            }
+        """
+    'ControllerFunction':
+        'prefix': 'l:controller'
+        'body': """
+            /**
+             * ${2:description}.
+             *
+             * @return \\\\Illuminate\\\\Http\\\\Response
+             */
+            public function ${1:Name}()
+            {
+                ${3}
+                return view('');
+            }
+        """

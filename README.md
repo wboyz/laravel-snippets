@@ -1,2 +1,15 @@
-# laravel-snippets
-Atom snippets for Laravel framework
+# Laravel 5 Snippets for Atom
+
+## Install
+Atom Package: https://atom.io/packages/laravel-5-snippets.
+
+```bash
+apm install laravel-5-snippets
+```
+
+Or Settings/Preferences ➔ Install ➔ Search for `laravel-5-snippets`. You should restart Atom after the Install / Update of the package.
+
+## Currently Available Snippets
+***
+
+![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)

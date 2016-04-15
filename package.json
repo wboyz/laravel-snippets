@@ -1,0 +1,25 @@
+{
+  "name": "laravel-5-snippets",
+  "version": "0.0.0",
+  "description": "Laravel 5 snippets for Atom.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wboyz/laravel-snippets.git"
+  },
+  "keywords": [
+    "atom",
+    "angular",
+    "rest",
+    "restful",
+    "snippets"
+  ],
+  "author": "wboyz",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/wboyz/laravel-snippets/issues"
+  },
+  "homepage": "https://github.com/wboyz/laravel-snippets#readme"
+}
