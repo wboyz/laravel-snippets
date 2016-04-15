@@ -59,7 +59,7 @@
              *
              * @var array
              */
-            protected $fillable = [${1:properties}];
+            protected $fillable = ['${1:properties}'];
         """
     'Guarded':
         'prefix': 'l:guarded'
@@ -69,7 +69,7 @@
              *
              * @var array
              */
-            protected $guarded = [${1:properties}];
+            protected $guarded = ['${1:properties}'];
         """
     'Dates':
         'prefix': 'l:dates'
@@ -79,7 +79,17 @@
              *
              * @var array
              */
-            protected $dates = [${1:properties}];
+            protected $dates = ['${1:properties}'];
+        """
+    'Appends':
+        'prefix': 'l:appends'
+        'body': """
+            /**
+             * The accessors to append to the model's array form.
+             *
+             * @var array
+             */
+            protected $appends = ['${1:properties}'];
         """
     'Casts':
         'prefix': 'l:casts'
@@ -103,7 +113,20 @@
              */
             public function scope${1:Name}($query)
             {
-                return $query->${3:where('example', 1)};
+                return $this;
+            }
+        """
+    'Accessor':
+        'prefix': 'l:accessor'
+        'body': """
+            /**
+             * Get the ${1:description}.
+             *
+             * @return ${2:type}
+             */
+            public function get${3:Name}Attribute()
+            {
+                return $this->attributes['${4:attribute}'] == ${5:value};
             }
         """
     'ControllerFunction':
