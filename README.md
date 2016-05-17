@@ -10,6 +10,8 @@ apm install laravel-5-snippets
 Or Settings/Preferences ➔ Install ➔ Search for `laravel-5-snippets`. You should restart Atom after the Install / Update of the package.
 
 ## Currently Available Snippets
+* **dd**: Die dump. *dd()*.
+* **dump**: Dump without die. *dump()*.
 * **l:hm**: HasMany method.
 * **l:bt**: BelongsTo method.
 * **l:btm**: BelongsToMany method.
