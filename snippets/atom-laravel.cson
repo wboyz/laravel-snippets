@@ -61,6 +61,19 @@
                 return $this->hasOne(${3:Name}::class${4:, 'foreign_key', 'local_key'});
             }
         """
+    'EloquentBoot':
+        'prefix': 'l:mb'
+        'body': """
+            /**
+             * The "booting" method of the model.
+             *
+             * @return void
+             */
+            protected static function boot()
+            {
+                parent::boot();
+            }
+        """
     'Fillable':
         'prefix': 'l:fillable'
         'body': """
@@ -70,6 +83,16 @@
              * @var array
              */
             protected $fillable = ['${1:properties}'];
+        """
+    'Touches':
+        'prefix': 'l:touches'
+        'body': """
+            /**
+             * All of the relationships to be touched.
+             *
+             * @var array
+             */
+            protected $touches = ['${1:properties}'];
         """
     'Guarded':
         'prefix': 'l:guarded'
@@ -139,6 +162,7 @@
             /**
              * Scope a query to only include ${2:description}.
              *
+             * @param \\\\Illuminate\\\\Database\\\\Eloquent\\\\Builder $query
              * @return \\\\Illuminate\\\\Database\\\\Eloquent\\\\Builder
              */
             public function scope${1:Name}($query)
@@ -154,9 +178,23 @@
              *
              * @return ${2:type}
              */
-            public function get${3:Name}Attribute()
+            public function get${3:Name}Attribute($${4:attribute})
             {
-                return $this->attributes['${4:attribute}'] == ${5:value};
+                return $${4:attribute};
+            }
+        """
+    'Mutator':
+        'prefix': 'l:mutator'
+        'body': """
+            /**
+             * Set the ${1:description}.
+             *
+             * @param  ${2:paramType}  $${5:value}
+             * @return void
+             */
+            public function set${4:Name}Attribute($${5:value})
+            {
+                $this->attributes['${6:attribute}'] = $${5:value};
             }
         """
     'ControllerFunction':
